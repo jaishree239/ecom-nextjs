@@ -1,0 +1,26 @@
+.navlink {
+    text-decoration: none;
+    color: black;
+    /* margin-left: 20px; */
+    /* margin-bottom: 20px; */
+    padding: 10px;
+}
+
+.cart__count {
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: space-between; */
+    /* background: #fff; */
+    /* margin-bottom: 20px; */
+    /* padding: 10px; */
+    /* border-radius: 5px; */
+    font-weight: bold;
+    /* text-transform: uppercase; */
+    margin-left: 40px;
+}
+
+.navlink:hover {
+    background: rgb(208, 206, 206);
+    border-radius: 5px;
+    padding: 5px 10px;
+}

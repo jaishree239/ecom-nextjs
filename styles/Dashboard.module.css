@@ -1,0 +1,58 @@
+.header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 20px;
+    background-color: aqua;
+}
+
+.header h4 {
+    margin-right: 20px;
+}
+
+.card__wrapper {
+    padding: 20px;
+    background: whitesmoke;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* .card__price {
+    color: blue;
+} */
+
+.card__image {
+    height: 80px
+}
+
+.card__title__price {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__btn {
+    border: none;
+    outline: none;
+    /* background: #764abc; */
+    background: rgb(159, 80, 80);
+    padding: 5px 10px;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.card__btn:hover {
+    /* background: #513282; */
+    background: rgb(148, 4, 4);
+    ;
+}

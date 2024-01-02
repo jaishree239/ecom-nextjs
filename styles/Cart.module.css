@@ -1,0 +1,38 @@
+.card__heading {
+    /* margin-bottom: 20px; */
+    text-align: center;
+}
+
+.cart__wrapper {
+    background: whitesmoke;
+
+}
+
+.cart__card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    margin-bottom: 20px;
+    padding: 14px;
+    border-radius: 5px;
+}
+
+.cart__btn {
+    border: none;
+    outline: none;
+    /* background: #764abc; */
+    background: rgb(159, 80, 80);
+    padding: 5px 10px;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.cart__btn:hover {
+    /* background: #513282; */
+    background: rgb(148, 4, 4);
+    ;
+}
