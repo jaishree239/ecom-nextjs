@@ -1,9 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useForm } from 'react-hook-form'
-import axios from 'axios'
-import * as yup from 'yup'
-import { yupResolver } from '@hookform/resolvers/yup'
-import styles from '../styles/LoginSignUp.module.css'
+import styles from '../styles/RegisterSignUp.module.css'
 
 interface Inputs {
     username: string
@@ -11,45 +8,19 @@ interface Inputs {
     password: string
 }
 
-const validationSchema = yup.object({
-    username: yup.string().required('Please enter Name'),
-    email: yup.string().required('Please enter email').email('Invalid email format'),
-    password: yup.string().required('Please enter password'),
-}).required()
-
-const LoginSignUp: React.FC = () => {
-    // const [formName, setFormName] = useState('Login')
+const RegisterSignUp: React.FC = () => {
     const { register, handleSubmit, formState: { errors }, setError } = useForm<Inputs>({
-        resolver: yupResolver(validationSchema),
         defaultValues: {
             username: '',
             email: '',
             password: ''
         }
     })
-    // console.log('errors', errors)
-    const onHandleSubmit = (data: any) => {
-        // console.log('data', data)
-        axios.post('https://api.realworld.io/api/users', { user: data })
-            .then(response => {
-                console.log('response', response)
-            }).catch(errors => {
-                console.log('errors', errors)
-                if (errors.response.data.errors.username) {
-                    setError('username', { type: 'server', message: errors.response.data.errors.username[0] })
-                }
-                if (errors.response.data.errors.email) {
-                    setError('email', { type: 'server', message: errors.response.data.errors.email[0] })
-                }
-                if (errors.response.data.errors.password) {
-                    setError('password', { type: 'server', message: errors.response.data.errors.password[0] })
-                }
-            })
-    }
     return (
-        <>
+        <div>
             <form className={styles.form}
-                onSubmit={handleSubmit(onHandleSubmit)}>
+            // onSubmit={handleSubmit(onHandleSubmit)}
+            >
                 {/* <h1>{formName}</h1> */}
                 <h1>Sign Up</h1>
                 <div className={styles.field}>
@@ -89,9 +60,8 @@ const LoginSignUp: React.FC = () => {
                     </button> */}
                 </div>
             </form>
-        </>
-
+        </div>
     )
 }
 
-export default LoginSignUp
+export default RegisterSignUp

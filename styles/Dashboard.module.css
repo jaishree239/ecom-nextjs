@@ -1,15 +1,3 @@
-.header {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-right: 20px;
-    background-color: aqua;
-}
-
-.header h4 {
-    margin-right: 20px;
-}
-
 .card__wrapper {
     padding: 20px;
     background: whitesmoke;
@@ -25,17 +13,8 @@
     border-radius: 10px;
 }
 
-/* .card__price {
-    color: blue;
-} */
-
 .card__image {
     height: 80px
-}
-
-.card__title__price {
-    display: flex;
-    justify-content: space-between;
 }
 
 .card__btn {
@@ -54,5 +33,27 @@
 .card__btn:hover {
     /* background: #513282; */
     background: rgb(148, 4, 4);
-    ;
 }
+
+/* 
+union types
+intersection types
+difference between interface and type
+making a field optional in interface
+difference between any , undefined 
+null check
+image is optional
+array type object type how it is defined
+nested types ?
+api call make hook 
+login from rtk
+types in different folder ---> import
+only one type use in entire product --> Implementation
+ */
+
+/* 
+ - Dummy project with RTK, Typescript, Next-13, react hook form.
+In Progress
+1. Login with RTK  
+2. Api call with hooks
+ */

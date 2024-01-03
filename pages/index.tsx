@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import Navbar from '../components/Navbar'
 import LoginSignUp from '../components/LoginSignUp'
+import RegisterSignUp from '../components/RegisterSignUp'
 // import styles from '../styles/Home.module.css'
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,8 +17,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-        <Navbar />
-        <LoginSignUp />
+        {/* <Navbar /> */}
+        {/* <LoginSignUp /> */}
+        <RegisterSignUp />
       </div>
     </>
   )
