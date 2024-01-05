@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-// import { RootState, AppDispatch } from '../state/store';
+import { RootState, AppDispatch } from '../state/store';
 import { useSelector, useDispatch } from 'react-redux';
 import styles from '../styles/Dashboard.module.css'
 import { add } from '../state/slice/cartSlice';
@@ -16,20 +16,14 @@ interface Product {
 
 const Dashboard: React.FC = () => {
     // const products = useSelector((state: RootState) => state.product.data)
-    // const dispatch = useDispatch<AppDispatch>();
+    const dispatch = useDispatch<AppDispatch>();
 
     // useEffect(() => {
     //     dispatch(getProduct())
     // }, [])
 
-    const {
-        // data: allProductsData,
-        data: products,
-        error,
-        isError,
-        isLoading,
-    } = useGetAllProductsQuery();
-    console.log('data 1', products)
+    const { data: products } = useGetAllProductsQuery();
+    // console.log('data 1', products)
     // const products: any = [];
 
     return (
@@ -44,7 +38,7 @@ const Dashboard: React.FC = () => {
                             <h5 className={styles.card__price}>{product.price}</h5>
                         </div>
                         <button className={styles.card__btn}
-                        // onClick={() => dispatch(add(product))}
+                            onClick={() => dispatch(add(product))}
                         >Add To Cart</button>
                     </div>
                 )

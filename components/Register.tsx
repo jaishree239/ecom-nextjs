@@ -1,35 +1,34 @@
 import React from 'react'
+import Link from 'next/link'
 import { useForm } from 'react-hook-form'
 import styles from '../styles/RegisterSignUp.module.css'
+import { useSigninUserMutation } from '../state/api/authApi'
 
 interface Inputs {
-    username: string
     email: string
     password: string
 }
 
-const RegisterSignUp: React.FC = () => {
+const Register: React.FC = () => {
+    const [signinUser, { data, isLoading }] = useSigninUserMutation();
+    console.log('data register', data)
     const { register, handleSubmit, formState: { errors }, setError } = useForm<Inputs>({
         defaultValues: {
-            username: '',
             email: '',
             password: ''
         }
     })
+
+    const onHandleSubmit = (values: any) => {
+        // console.log('data', data)
+        signinUser({ ...values });
+    }
     return (
         <div>
             <form className={styles.form}
-            // onSubmit={handleSubmit(onHandleSubmit)}
+                onSubmit={handleSubmit(onHandleSubmit)}
             >
-                {/* <h1>{formName}</h1> */}
-                <h1>Sign Up</h1>
-                <div className={styles.field}>
-                    <label className={styles.label}>Name</label>
-                    <input {...register('username')} className={styles.input} type='text' />
-                    {errors.username && (
-                        <span className={styles.error}>{errors.username.message}</span>
-                    )}
-                </div>
+                <h1>Login </h1>
                 <div className={styles.field}>
                     <label className={styles.label}>Email</label>
                     <input {...register('email')} className={styles.input} type='text' />
@@ -45,23 +44,16 @@ const RegisterSignUp: React.FC = () => {
                     )}
                 </div>
                 <div>
-                    {/* <button className={styles.btn} */}
-                    {/* <button className={`action === Log In ? ${styles.gray} : ${styles.btn} `}
-                        type='submit'>
-                        Sign Up
-                    </button> */}
                     <button className={styles.btn}
                         type='submit'>
-                        Sign Up
+                        Login
                     </button>
-                    {/* <button className={`action === Sign Up ? ${styles.btn} : ${styles.gray} `}
-                        type='submit'>
-                        Log In
-                    </button> */}
+                    <p>Don't have an account ?</p>
+                    <Link href='/signup' className={styles.loginsignup}>Sign Up</Link>
                 </div>
             </form>
         </div>
     )
 }
 
-export default RegisterSignUp
+export default Register

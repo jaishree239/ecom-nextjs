@@ -43,3 +43,9 @@
 .error {
     color: red
 }
+
+.loginsignup {
+    padding-left: 60px;
+    text-decoration: underline;
+    cursor: pointer;
+}
