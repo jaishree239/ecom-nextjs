@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-// import Navbar from '../components/Navbar'
+import Navbar from '../components/Navbar'
 // import LoginSignUp from '../components/LoginSignUp'
 import Register from '../components/Register'
 // import styles from '../styles/Home.module.css'
@@ -17,6 +17,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
+        <Navbar />
         <Register />
 
       </div>
